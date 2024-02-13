@@ -19,7 +19,7 @@ public class ScheduleModify extends HttpServlet {
 	//버전 충돌을 방지하고 직렬화된 객체의 호환성을 보장하기 위해 사용
 
 	ScheduleDao ScheduleDatabase = new ScheduleDao();
-	//ScheduleDatabase클래스를 생성자를 사용하여 ScheduleDatabase라는 이름의 인스턴스 생성
+	//ScheduleDatabaseをインスタンス化してScheduleDatabaseというインスタンス生成
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//http의 GET요청을 처리하는 메서드
