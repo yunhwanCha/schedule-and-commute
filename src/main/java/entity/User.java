@@ -1,4 +1,4 @@
-package model;
+package entity;
 //model 패키지에 속하는 클래스를 선언하기 위한 선언부
 public class User {
 private String id;

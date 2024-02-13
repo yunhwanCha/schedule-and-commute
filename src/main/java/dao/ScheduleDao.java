@@ -8,11 +8,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import model.DateToday;
-import model.Schedule;
-//패키지 외부의 클래스, 패키지, 라이브러리를 사용하기 위해 import로 선언
+import entity.DateToday;
+import entity.Schedule;
 
-public class ScheduleDatabase {//Schedule과 관련된 DB처리를 하는 메서드
+public class ScheduleDao {//Schedule과 관련된 DB처리를 하는 메서드
 	private final String MAPPER_NAME = "mapper.scheduleMapper.";
 	// 스케쥴 매퍼의 위치를 상수로 설정
 	

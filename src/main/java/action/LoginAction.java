@@ -1,5 +1,5 @@
 package action;
-//action 패키지에 속하는 클래스를 선언하기 위한 선언부
+//actionパッケージのクラスを宣言する
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -9,10 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.UserDatabase;
-//패키지 외부의 클래스, 패키지, 라이브러리를 사용하기 위해 import로 선언
-@WebServlet("/login.do")//서블릿을 login.do에 매핑하는 어노테이션
-public class LoginServlet extends HttpServlet {
+import dao.UserDao;
+//クラス外部のクラス、パッケージ、ライブラリを使うためにimportで宣言
+@WebServlet("/login.do")//サーブレットを login.doにマッピングするアノテーション
+public class LoginAction extends HttpServlet {
 	//HttpServlet을 상속받고있고 외부에서 접근 가능한 LoginServlet 클래스
 	private static final long serialVersionUID = 1L;
        
@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String login="";
-		UserDatabase userDatabase = new UserDatabase(); 
+		UserDao userDatabase = new UserDao(); 
 		String pwDB = userDatabase.getPw(id);
 		if(pwDB == null) {
 			login="not ok";

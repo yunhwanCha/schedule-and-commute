@@ -7,7 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 //패키지 외부의 클래스, 패키지, 라이브러리를 사용하기 위해 import로 선언
-public class UserDatabase {//User와 관련된 DB처리를 하는 메서드
+public class UserDao {//User와 관련된 DB처리를 하는 메서드
 	private final String MAPPER_NAME = "mapper.userMapper.";
 	// 스케쥴 매퍼의 위치를 상수로 설정
 	

@@ -1,5 +1,5 @@
 package action;
-//action 패키지에 속하는 클래스를 선언하기 위한 선언부
+//actionパッケージのクラスを宣言する
 
 import java.io.IOException;
 
@@ -10,11 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import dao.ScheduleDatabase;
-import model.Schedule;
-//패키지 외부의 클래스, 패키지, 라이브러리를 사용하기 위해 import로 선언
-
-@WebServlet("/scheduleInput.do")//서블릿을 scheduleInput.do에 매핑하는 어노테이션
+import dao.ScheduleDao;
+import entity.Schedule;
+//クラス外部のクラス、パッケージ、ライブラリを使うためにimportで宣言　　
+@WebServlet("/scheduleInput.do")//サーブレットを scheduleInput.doにマッピングするアノテーション
 public class ScheduleInput extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	//serialVersionUID 직렬화된 객체의 버전번호로써 1L을 사용
@@ -22,7 +21,7 @@ public class ScheduleInput extends HttpServlet {
 	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// HTTP의 GET 요청을 처리하는 메서드
+		//HTTPのGET要請を処理するメソッド
 		response.sendRedirect("scheduleInput.jsp");
 		//HttpServletResponse의 sendRedirect("scheduleInput.jsp") scheduleInput.jsp로 리다이렉트
 		//페이지를 이동시킴
@@ -30,7 +29,7 @@ public class ScheduleInput extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// HTTP의 POST 요청을 처리하는 메서드
-		ScheduleDatabase ScheduleDatabase = new ScheduleDatabase();
+		ScheduleDao ScheduleDatabase = new ScheduleDao();
 		//ScheduleDatabase클래스를 생성자를 사용하여 ScheduleDatabase라는 이름의 인스턴스 생성
 		HttpSession session = request.getSession();
 		//세션을 사용하기 위해 HttpServletRequest의 getSession()을 실행
